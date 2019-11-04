@@ -1,0 +1,14 @@
+$key_size: 32px;
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(71, $key_size/4);
+  grid-template-rows: repeat(5, $key_size);
+  grid-column-gap: 0;
+  grid-row-gap: $key_size/4;
+}
+
+.g-4 {
+  grid-column: auto / span 4;
+}
+
