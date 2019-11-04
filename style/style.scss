@@ -2,9 +2,9 @@ $key_size: 32px;
 
 .keyboard {
   display: grid;
-  grid-template-columns: repeat(71, $key_size/4);
+  grid-template-columns: repeat(74, $key_size/4);
   grid-template-rows: repeat(5, $key_size);
-  grid-column-gap: 0;
+  grid-column-gap: 0px;
   grid-row-gap: $key_size/4;
 }
 

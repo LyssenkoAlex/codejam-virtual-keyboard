@@ -7,12 +7,12 @@ class Key{
         this.rus = config.rus;
         this.type = config.type;
         this.size = config.size;
-        this.row = conf.row;
+        this.row = config.row;
     }
  
 }
 
-const ROW = {FIRST:'FIRST', SECOND:'SECOND', THIRD, 'THIRD', FOUTH:FOUTH, FIFTH:'FIFTH'};
+const ROW = {FIRST:'FIRST', SECOND:'SECOND', THIRD:'THIRD', FOUTH:'FOUTH', FIFTH:'FIFTH'};
 
 const ALPHABET = [
             new Key ({eng:'`', rus:'ц',type:'KEY',size:4, row:ROW.FIRST}),
@@ -28,8 +28,8 @@ const ALPHABET = [
             new Key ({eng:'0', rus:'ц',type:'KEY',size:4, row:ROW.FIRST}),
             new Key ({eng:'-', rus:'ц',type:'KEY',size:4, row:ROW.FIRST}),
             new Key ({eng:'=', rus:'ц',type:'KEY',size:4, row:ROW.FIRST}),
-            new Key ({eng:'<--', rus:'ц',type:'BACKSPACE',size:12, row:ROW.FIRST}),
-            new Key ({eng:'Tab', rus:'ц',type:'TAB',size:8, row:ROW.SECOND}),
+            new Key ({eng:'<--', rus:'ц',type:'BACKSPACE',size:9, row:ROW.FIRST}),
+            new Key ({eng:'Tab', rus:'ц',type:'TAB',size:6, row:ROW.SECOND}),
             new Key ({eng:'q', rus:'ц',type:'KEY',size:4, row:ROW.SECOND}),
             new Key ({eng:'w', rus:'ц',type:'KEY',size:4, row:ROW.SECOND}),
             new Key ({eng:'e', rus:'ц',type:'KEY',size:4, row:ROW.SECOND}),
@@ -43,7 +43,7 @@ const ALPHABET = [
             new Key ({eng:'[', rus:'ц',type:'KEY',size:4, row:ROW.SECOND}),
             new Key ({eng:']', rus:'ц',type:'KEY',size:4, row:ROW.SECOND}),
             new Key ({eng:'\\', rus:'ц',type:'KEY',size:8, row:ROW.SECOND}),
-            new Key ({eng:'Caps Lock', rus:'ц',type:'CAPS_LOCK',size:6, row:ROW.THIRD}),
+            new Key ({eng:'Caps Lock', rus:'ц',type:'CAPS_LOCK',size:9, row:ROW.THIRD}),
             new Key ({eng:'a', rus:'ц',type:'KEY',size:4, row:ROW.THIRD}),
             new Key ({eng:'s', rus:'ц',type:'KEY',size:4, row:ROW.THIRD}),
             new Key ({eng:'d', rus:'ц',type:'KEY',size:4, row:ROW.THIRD}),
@@ -68,11 +68,18 @@ const ALPHABET = [
             new Key ({eng:'.', rus:'ц',type:'KEY',size:4, row:ROW.FOUTH}),
             new Key ({eng:'/', rus:'ц',type:'KEY',size:4, row:ROW.FOUTH}),
             new Key ({eng:'Shift', rus:'ц',type:'SHIFT',size:4, row:ROW.FOUTH})
-]
+];
 
 
 function init() {
     let el = document.getElementById("idKeyboard");
 
+    ALPHABET.forEach(x => {
+        let g = document.createElement('div');
+        let textNode = document.createTextNode(x.eng);
+        g.append(textNode);
+        g.className = 'g-' + x.size;
+        el.append(g);
+    })
     
 }
