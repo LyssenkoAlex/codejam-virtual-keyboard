@@ -91,6 +91,7 @@ const ALPHABET = [
 
 let leftShiftKeyPressed = false;
 let leftAltKeyPressed = false;
+let CapsLockKeyPressed = false;
 
 
 function init(lang) {
@@ -101,6 +102,12 @@ function init(lang) {
     ALPHABET.forEach(x => {
         let g = document.createElement('div');
         g.setAttribute("id", "id" + x.code);
+        g.addEventListener('click', e => {
+            let el = document.getElementById('idKeyboardInput');
+            let text = el.innerText;
+            text = text + x[lang];
+            el.innerHTML = text;
+        })
         let gSpan = document.createElement('span');
         let textNode = document.createTextNode(x[lang]);
 
@@ -126,8 +133,12 @@ document.addEventListener('keypress', (e) => {
     } else if (e.code === 'Enter') {
         text = text + "<br>";
     } else {
-        text = text + e.key;
+        
+        text = text +  e.key;
     }
+
+    
+   
     el.innerHTML = text;
 
 });
@@ -169,6 +180,14 @@ document.addEventListener('keydown', (e) => {
     if (leftAltKeyPressed && leftShiftKeyPressed) {
         changeLanguage();
     }
+
+    if(e.code === 'CapsLockKey' && !CapsLockKeyPressed) {
+        CapsLockKeyPressed = true;
+    }
+    if(e.code === 'CapsLockKey' && CapsLockKeyPressed) {
+        CapsLockKeyPressed = false;
+    }
+
     let el = document.getElementById('idKeyboardInput');
     let text = el.innerText;
 
