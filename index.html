@@ -14,7 +14,12 @@
     <div class="keyboard" id="idKeyboard"></div>
 </main>
 <script>
-    init(LANGUAGE.ENG);
+    if(localStorage.getItem('LANGUAGE') === null) {
+        init(LANGUAGE.ENG);
+    }
+    else {
+        init(localStorage.getItem('LANGUAGE'));
+    }
 </script>
 
 </body>
