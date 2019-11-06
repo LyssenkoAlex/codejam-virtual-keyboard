@@ -30,7 +30,7 @@ const ALPHABET = [
     new Key({eng: '0', rus: '0', type: 'KEY', size: 4, row: ROW.FIRST, PRINTABLE: true, code: 'Digit0'}),
     new Key({eng: '-', rus: '-', type: 'KEY', size: 4, row: ROW.FIRST, PRINTABLE: true, code: 'Minus'}),
     new Key({eng: '=', rus: '=', type: 'KEY', size: 4, row: ROW.FIRST, PRINTABLE: true, code: 'Equal'}),
-    new Key({eng: '<--', rus: '<--', type: 'BACKSPACE', size: 6, row: ROW.FIRST, PRINTABLE: false, code: 'Backspace'}),
+    new Key({eng: 'Backspace', rus: 'Backspace', type: 'BACKSPACE', size: 6, row: ROW.FIRST, PRINTABLE: false, code: 'Backspace'}),
     new Key({eng: 'Tab', rus: 'Tab', type: 'TAB', size: 6, row: ROW.SECOND, PRINTABLE: false, code: 'Tab'}),
     new Key({eng: 'q', rus: 'й', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyQ'}),
     new Key({eng: 'w', rus: 'ц', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyWe'}),
